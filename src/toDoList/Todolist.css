@@ -1,28 +1,44 @@
-/* 
+html {
+  background: #94e5f0;
+  font-family: 'Roboto', sans-serif;
+}
 
 body {
-    font-family: 'Roboto', sans-serif;
-    background-color: #FEE9F0;
-    font-size: 16px;
-  }
-  
-  *{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-   */
+  font-size: 16px;
+  mIN-height: 100%;
+}
 
-html,
-body {
-  background-color: #90F3ED;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.input__search {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.text__edit {
+  color: red;
+  width: 90%;
+  padding: 8px;
+  margin: 5px 2px 5px 0px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+
 }
 
 .card {
   margin: 50px auto;
   background-color: #f5f8f9;
-  /* height: 430px; */
-  width: 350px;
+  width: 90%;
   box-shadow: 0 0 6px grey;
   overflow: hidden;
   line-height: 2rem;
@@ -30,47 +46,18 @@ body {
 }
 
 
-.card__header {
-  height: 215px;
-  overflow: hidden;
-  position: relative;
-}
-
-.card__header::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(71, 32, 84, 0.2);
-}
-
-.card__body {
-  position: relative;
-}
-
-.card__body::before {
-  content: '';
-  position: absolute;
-  top: -35px;
-  left: -50px;
-  background-color: #f5f8f9;
-  height: 100px;
-  width: 120%;
-  display: block;
-  transform: rotate(10deg);
-
-}
-
 .card__content {
   position: relative;
   padding: 0 20px;
 
 }
 
+.card__title {
+  padding-top: 30px;
+}
+
 .card__title p {
-  font-size: 0.8rem;
+  font-size: 1rem;
 }
 
 /* Filler Button */
@@ -260,19 +247,6 @@ ul.todo#completed {
   padding: 30px 0;
 }
 
-ul.todo#completed:before {
-  content: '';
-  width: 150px;
-  height: 1px;
-  background: #d8e5e0;
-
-  position: absolute;
-  top: 14px;
-  left: 50%;
-
-  margin: 0 0 0 -75px;
-}
-
 ul.todo#todo:empty:after {
   content: 'You have nothing to-do!';
   margin: 15px 0 0 0;
@@ -299,7 +273,7 @@ ul.todo li .buttons button {
   outline: none;
   cursor: pointer;
   position: relative;
-  padding: 5px 0 5px 5px;
+  padding: 15px 0 6px 5px;
   font-size: 1rem;
 }
 
@@ -307,16 +281,31 @@ ul.todo li .buttons .remove {
   color: #aaa;
 }
 
-ul.todo li .buttons .remove:hover {
+ul.todo li .buttons .remove:hover,
+ul.todo li .buttons .cancel:hover {
   color: #FA396B;
 }
+
+ul.todo li .buttons .edit {
+  color: #aaa;
+
+}
+
+ul.todo li .buttons .save,
+ul.todo li .buttons .cancel {
+  color: #aaa;
+  margin: 0 5px;
+}
+
+
 
 ul.todo li .buttons .complete {
   color: #aaa;
 
 }
 
-ul.todo li .buttons .complete:hover {
+ul.todo li .buttons .complete:hover,
+ul.todo li .buttons .save:hover {
   color: #25b99a;
 }
 
@@ -339,4 +328,126 @@ ul.todo#completed li .buttons .complete .far {
 
 ul.todo#completed span {
   color: #25b99a;
+}
+
+.btn-danger {
+  color: #fff;
+  background-color: #dc3545;
+  border-color: #dc3545;
+}
+
+.btn-danger:hover {
+  color: #fff;
+  background-color: #c82333;
+  border-color: #bd2130;
+}
+
+.btn-danger:focus,
+.btn-danger.focus {
+  box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.5);
+}
+
+.btn-danger:disabled {
+  background-color: #dc3545;
+  border-color: #dc3545;
+  opacity: 0.65;
+}
+
+.btn {
+  display: inline-block;
+  font-weight: 400;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  user-select: none;
+  border: 1px solid transparent;
+  padding: 0.25;
+  margin-left: .5rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: 0.25rem;
+  transition: all 0.15s ease-in-out;
+}
+
+.sum {
+  display: flex;
+  justify-content: center;
+  font-size: 1rem;
+}
+
+.text__title {
+  padding-top: 8px;
+  text-align: center;
+}
+
+.todo-container {
+  max-height: 250px;
+  /* Giới hạn chiều cao */
+  overflow-y: auto;
+  /* Hiển thị thanh cuộn khi vượt quá max-height */
+  border: 1px solid #ccc;
+  /* Thêm viền để rõ ràng */
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.todo-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.todo-container::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 4px;
+}
+
+.todo-container::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .card {
+    width: 100%;
+    margin: 20px auto;
+    padding: 10px;
+  }
+
+  .buttons {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .buttons button {
+    margin-bottom: 2px;
+    margin-top: 2px;
+  }
+
+  ul.todo li .buttons button {
+    padding: 2px 0 2px 2px;
+  }
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  .card {
+    width: 90%;
+  }
+
+  .todo-container {
+    padding: 10px;
+  }
+}
+
+/* Laptop & PC */
+@media (min-width: 1024px) {
+  .card {
+    width: 70%;
+  }
+}
+
+/* Màn hình lớn */
+@media (min-width: 1200px) {
+  .card {
+    width: 70%;
+  }
 }
