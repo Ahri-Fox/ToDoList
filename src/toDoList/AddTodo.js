@@ -15,10 +15,11 @@ export default class AddTodo extends Component {
     handleSubmit = (event) => {
         event.preventDefault();
         if (this.state.taskName.trim() === "") return;
-
         this.props.onAdd(this.state.taskName);
         this.setState({ taskName: "" });
     };
+
+
 
     render() {
         return (
